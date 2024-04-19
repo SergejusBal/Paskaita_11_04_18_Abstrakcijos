@@ -1,9 +1,13 @@
 import Coverter.*;
 import MathOperation.MathOperation;
 import Predicate.*;
+import SortInteger.*;
+import SortText.*;
 import StringOperation.*;
+import Transformer.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -257,6 +261,60 @@ public class Main {
         System.out.println();
         System.out.println("9 uzduotis");
         System.out.println();
+
+        SortText sortText = new SortNaturalOrder();
+        List<String> stringList = Arrays.asList("Pirmadienis", "Antradienis","Trečiadienis",
+                                                "Ketvirtadienis","Penktadienis","Šeštadienis",
+                                                "Sekmadienis");
+
+        System.out.println(stringList);
+        sortText.sort(stringList);
+        System.out.println("Sorted");
+        System.out.println(stringList);
+
+
+        ///////////////////////////////////////////////////////////////////////////////////
+        //////////////////////// 10 Uzduotis
+
+        System.out.println();
+        System.out.println("10 uzduotis");
+        System.out.println();
+
+        SortInteger sortInteger = new SortIntegerReverseOrder();
+        List<Integer> intergerList = Arrays.asList(50,74,458,457,41,74154,454,54,454,447,114,77,11,44,77,7);
+
+        System.out.println(intergerList);
+        sortInteger.sort(intergerList);
+        System.out.println("Sorted");
+        System.out.println(intergerList);
+
+        ///////////////////////////////////////////////////////////////////////////////////
+        //////////////////////// 11 Uzduotis
+
+        System.out.println();
+        System.out.println("11 uzduotis");
+        System.out.println();
+
+        Transformer teanform = new TransformRemoveEmpty();
+        List<String> stringWithEmptyList = new ArrayList<>(Arrays.asList("Pirmadienis","    ", "Antradienis", "",
+                                                        "Trečiadienis", "  ",  "Ketvirtadienis",
+                                                        "  " ,"Penktadienis","",
+                                                        "Šeštadienis","    ", "Sekmadienis"));
+
+        System.out.println(stringWithEmptyList);
+        teanform.transform(stringWithEmptyList);
+        System.out.println("Tranformed");
+        System.out.println(stringWithEmptyList);
+
+
+        ///////////////////////////////////////////////////////////////////////////////////
+        //////////////////////// 12 Uzduotis
+
+        System.out.println();
+        System.out.println("12 uzduotis");
+        System.out.println();
+
+
 
 
 
