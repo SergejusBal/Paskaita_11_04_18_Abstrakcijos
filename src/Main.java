@@ -314,10 +314,35 @@ public class Main {
         System.out.println("12 uzduotis");
         System.out.println();
 
+        List<StringOperation> operacijuString = new ArrayList<>();
+        String text = "Labas";
 
 
+        for(int i = 0; i < 20; i++){
+            int randomInt = random.nextInt(1,4);
+            System.out.println(randomInt);
+            switch (randomInt){
+                case 1:
+                    operacijuString.add(new StringOperationLowerCase());
+                    break;
+                case 2:
+                    operacijuString.add(new StringOperationUpperCase());
+                    break;
+                case 3:
+                    operacijuString.add(new StringOperationReverse());
+                    break;
+            }
+        }
 
+        perfromeAction(text, operacijuString);
 
+    }
 
+    static void perfromeAction(String text, List<StringOperation> list){
+        String stringText = text;
+        for(StringOperation s : list){
+            stringText = s.manipulate(stringText);
+            System.out.println(stringText);
+        }
     }
 }
